@@ -16,22 +16,22 @@ th, td {
 }
 #description {
     margin: 20px;
-    padding: 10px;
+    padding: 20px;
     border-radius: 50px 50px 0 0;
-    border-top: dotted;
-    border-bottom: dotted;
+    border-top: 3px dotted;
+    border-bottom:3px dotted;
 }
 #receipe {
     margin: 20px;
-    padding: 10px;
-    border: dotted;
+    padding: 20px;
+    border: 3px dotted;
 }
 #package {
     margin: 20px;
-    padding: 10px;
-    border-left: dotted;
-    border-right: dotted;
-    border-top: dotted;
+    padding: 30px;
+    border-left: 3px dotted;
+    border-right: 3px dotted;
+    border-top: 3px dotted;
     border-bottom-right-radius: 50px;
     border-bottom-left-radius: 50px;
 }
