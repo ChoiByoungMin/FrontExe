@@ -23,6 +23,10 @@
             const fish = document.getElementById('fish');
             let x = 50;
             let y = 200;
+            const LEFT_KEY = 37;
+            const RIGHT_KEY = 37;
+            const UP_KEY = 37;
+            const DOWN_KEY = 37;
             const move_val = 50;
             const panel_width = 500;
             const panel_height = 500;
@@ -32,16 +36,16 @@
             document.addEventListener('keydown', function (e) {
                 console.log('입력 키 코드: ' + e.keyCode);
                 switch (e.keyCode) {
-                    case 37:
+                    case LEFT_KEY:
                         x -= move_val;      // 좌
                         break;
-                    case 39:                // 우
+                    case RIGHT_KEY:                // 우
                         x += move_val;
                         break;
-                    case 38:                // 상
+                    case UP_KEY:                // 상
                         y -= move_val;
                         break;
-                    case 40:                // 하
+                    case DOWN_KEY:                // 하
                         y += move_val;
                         break;
                 }
