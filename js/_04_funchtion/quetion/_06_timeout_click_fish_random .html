@@ -1,0 +1,78 @@
+<!-- 
+물고기를 상자에 띄우고
+물고기를 5초안에 최대한 클릭할 것
+클릭한 횟수가 상자위에 출력될 것
+5초가 지나면 더 이상 클릭횟수 증가하지 않음. 
+
+물고기는 0.2초마다 위치를 옮겨다닐 것
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #panel {
+            width: 900px;
+            height: 600px;
+            border: 1px solid #999;
+            position: relative;
+        }
+
+        #fish {
+            position: absolute;
+            left: 400px;
+            top: 280px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const INTERVAL = 10000;
+            let $number = document.querySelector('#count');
+            let $fishClick = document.querySelector('#fish');
+            let isClick = true;
+            const MAX_X = 380;
+            const MAX_Y = 430;
+            const gameINTERVAL = 800;
+            let move_fish = null;
+
+            $fishClick.addEventListener('click', () => {
+                if (isClick) {
+                    let count = Number($number.textContent)
+                    count = count + 1;
+                    $number.textContent = count;
+                }
+            });
+
+            move_fish = setInterval(() => {
+
+                let x = parseInt(Math.random() * MAX_X);
+                let y = parseInt(Math.random() * MAX_Y);
+
+                fish.style.left = x + "px";
+                fish.style.top = y + "px";
+            }, gameINTERVAL);
+
+
+            setTimeout(() => {
+                clearInterval(move_fish);
+                move_fish = null;
+                isClick = false;
+                alert("게임이 종료되었습니다.")
+            }, INTERVAL);
+
+        });
+    </script>
+</head>
+
+<body>
+    <div id="score">현재 점수 <span id="count">0</span></div>
+    <div id="panel">
+        <img src="../../../images2/fish1.png" id="fish">
+    </div>
+</body>
+
+</html>
